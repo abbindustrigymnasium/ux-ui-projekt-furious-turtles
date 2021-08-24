@@ -1,9 +1,11 @@
 <template>
   <nav>
-    <div class="menu-item"><a href="#">Home</a></div>
-    <div class="menu-item"><a href="#">About Us</a></div>
-    <Dropdown title="Services" id="drop" :items="services"></Dropdown>
-    <div class="menu-item"><a href="#">Contact</a></div>
+    <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" id="razer" alt="">
+    <div class="menu-item"><router-link to="/">Home</router-link></div>
+    <Dropdown title="Order" id="drop" :items="services"></Dropdown>
+    <div class="menu-item"><router-link to="/About">About Us</router-link></div>
+    <div class="menu-item"><router-link to="/Contact">Contact us</router-link></div>
+    <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" id="razer" alt="">
   </nav>
 </template>
 
@@ -18,15 +20,15 @@ export default {
     return {
       services: [
         {
-          title: 'Web',
+          title: 'Cake',
           link: '#'
         },
         {
-          title: 'Design',
+          title: 'Bread',
           link:'#'
         },
         {
-          title: 'Videos',
+          title: 'Cookie',
           link: '#'
         }
       ]
@@ -36,6 +38,10 @@ export default {
 </script>
 
 <style>
+#razer {
+  height: 50px;
+  width: 100px;
+}
 nav {
   display: flex;
   align-items: center;

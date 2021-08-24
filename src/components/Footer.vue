@@ -86,7 +86,7 @@ body {
     box-sizing: border-box;
     padding: 60px 0px;
 }
-/* STYLES SPECIFIC TO FOOTER  */
+/* STYLES SPECIFIC TO wFOOTER  */
 .footer {
     width: 100%;
     position: relative;
