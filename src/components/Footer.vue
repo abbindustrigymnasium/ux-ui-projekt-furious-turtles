@@ -53,9 +53,9 @@
             <div class="col social">
                 <h1>Social</h1>
                 <ul>
-                    <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;" /></li>
-                    <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;" /></li>
-                    <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;" /></li>
+                    <li><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" width="32" style="width: 32px;" /></li>
+                    <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" width="32" style="width: 32px;" /></li>
+                    <li><img src="https://seeklogo.com/images/T/tiktok-app-icon-logo-0F5AD7AE01-seeklogo.com.png" width="32" style="width: 32px;" /></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

@@ -1,27 +1,40 @@
 <template>
     <div id="app">
-        <Footer></Footer>
+     <header><navbar/></header>
+     <div id="mid-page"></div>
+    <Footer></Footer>
     </div>
 </template>
 
 <script>
-import Footer from './components/Footer.vue';
+import Footer from './components/Footer';
+import navbar from './components/navbar';
 
 export default {
     name: 'App',
     components: {
         Footer,
-    },
-};
+        navbar
+    }
+}
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'montserrat', sans-serif;
+}
+header {
+  width: 100vw;
+  background-color: #222;
+  padding: 15px;
+}
+
+#mid-page {
+    margin-bottom: 700px;
 }
 </style>
