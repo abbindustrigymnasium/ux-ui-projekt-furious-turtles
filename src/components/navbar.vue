@@ -6,7 +6,6 @@
     <div class="menu-item"><router-link to="/About">About Us</router-link></div>
     <div class="menu-item"><router-link to="/Contact">Contact us</router-link></div>
     <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" id="razer" alt="">
-    <div class="menu-item" id="login"></div>
   </nav>
 </template>
 
@@ -39,7 +38,7 @@ export default {
 </script>
 
 <style>
-#login {
+#drop1{
   position: absolute;
   margin-left: 1560px;
 }
