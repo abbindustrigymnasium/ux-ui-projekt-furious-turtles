@@ -26,6 +26,11 @@ const routes = [
     name: 'Contact',
     component: () => import( '../views/Contact.vue')
   },
+  {
+    path: '/Cake',
+    name: 'Cake',
+    component: () => import( '../views/Cake.vue')
+  },
 ]
 
 const router = new VueRouter({
