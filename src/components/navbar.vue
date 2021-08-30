@@ -6,6 +6,7 @@
     <div class="menu-item"><router-link to="/About">About Us</router-link></div>
     <div class="menu-item"><router-link to="/Contact">Contact us</router-link></div>
     <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" id="razer" alt="">
+    <div class="menu-item" id="log"><router-link to="/Login">Login</router-link></div>
   </nav>
 </template>
 
@@ -20,8 +21,8 @@ export default {
     return {
       services: [
         {
-          title: 'Cake',
-          link: '#'
+          title: 'Cakes',
+          link: '/Cakes'
         },
         {
           title: 'Bread',
@@ -38,6 +39,10 @@ export default {
 </script>
 
 <style>
+#log {
+  position: absolute;
+  margin-left: 1600px;
+}
 #drop1{
   position: absolute;
   margin-left: 1560px;

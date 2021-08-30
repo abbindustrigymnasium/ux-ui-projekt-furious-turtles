@@ -22,7 +22,7 @@ export default {
 
 <style>
 #mid {
-  margin-bottom: 600px;
+  margin-bottom: 500px;
 }
 
 * {

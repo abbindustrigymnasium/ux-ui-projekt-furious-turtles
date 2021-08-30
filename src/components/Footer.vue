@@ -81,7 +81,6 @@ body {
 .dummy_page {
     height: 200px;
     width: 100%;
-    background-color: #f0f0f0;
     text-align: center;
     box-sizing: border-box;
     padding: 60px 0px;

@@ -1,26 +1,28 @@
 <template>
-  <div class="Contact">
+<div>
     <header><navbar /></header>
-    <h1 id="h">This is a contact page</h1>
+    <div id="mid"></div>
+    <Cake />
+
     <Footer />
-  </div>
+</div>
+  
 </template>
 
 <script>
 import Footer from '../components/Footer.vue'
 import Navbar from '../components/navbar.vue'
+import Cake from '../components/Cake.vue'
 export default {
-  name: 'Contact',
-  components: {
-    Navbar,
-    Footer
-  }
+    name: 'Cakes',
+    components: {
+        Footer,
+        Navbar,
+        Cake
+    }
 }
 </script>
 
 
-
 <style>
-
-
 </style>
