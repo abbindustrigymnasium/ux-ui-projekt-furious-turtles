@@ -1,32 +1,52 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+    <header><navbar /></header>
     <router-view/>
-  </div>
+    <Footer id="foot"/>
+    </div>
+
 </template>
 
+<script>
+import navbar from './components/navbar.vue'
+import Footer from './components/Footer.vue'
+export default {
+  name: 'Home',
+  components: {
+    navbar,
+    Footer
+  }
+}
+
+  </script>
+
 <style>
+
+
+body {
+  font-family: 'montserrat', sans-serif;
+  background-image: url("https://wallpapercave.com/wp/wp2727708.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+header {
+  width: 100w;
+  background-color: #222;
+  padding: 15px;
+  margin-top: -60px;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  margin-top:60px;
 }
 
-#nav {
-  padding: 30px;
+#foot {
+  margin-top: 0px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
