@@ -44,13 +44,9 @@
     <div class="footerFooter">
       <div class="left">
         <p>Copyright © 2021 Furious Turtles Inc. All rights reserved.</p>
-        <p>|</p>
         <p>Site Map</p>
-        <p>|</p>
         <p>Legal Terms</p>
-        <p>|</p>
         <p>Privacy Policy</p>
-        <p>|</p>
         <p>Cookie Policy</p>
       </div>
       <p>Sweden</p>
@@ -67,19 +63,17 @@ export default {
 <style scoped>
 .footerContainer {
   width: 100%;
-  margin: none;
-  padding: none;
+  margin: 0;
+  padding: 0;
   background-color: #111111;
-  padding-left: 100px;
-  padding-right: 100px;
+  overflow: hidden;
+  text-align: center;
 }
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px black dotted;
-  min-width: 700px;
-  max-width: 1000px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -91,18 +85,12 @@ export default {
 .left {
   display: flex;
   justify-content: space-between;
+  width: 80%;
   margin-left: auto;
-  min-width: 700px;
-  max-width: 1000px;
   margin-right: auto;
 }
 p {
   color: #8a8a8a;
-}
-p:hover {
-  color: white;
-  text-decoration: underline;
-  cursor: pointer;
 }
 h3 {
   color: #ededed;

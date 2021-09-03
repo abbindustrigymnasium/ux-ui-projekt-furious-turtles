@@ -24,10 +24,16 @@ export default {
 
 <style scoped>
 .navbarContainer {
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
   background-color: #111111;
   color: #8a8a8a;
   padding-left: 100px;
   padding-right: 100px;
+  z-index: 100000;
 }
 .navbar {
   display: flex;
