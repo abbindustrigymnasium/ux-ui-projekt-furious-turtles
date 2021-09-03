@@ -12,11 +12,11 @@
       <h1>{{ cake.title }}</h1>
       <h3>{{ cake.previewDescription }}</h3>
       <div class="actions">
-        <div class="action">
+        <div @click="openInfo(cake.id)" class="action">
           <span>Learn More <span class="accent">></span></span>
         </div>
-        <div class="action">
-          <span>Buy <span class="accent">></span></span>
+        <div @click="addToCart(cake.id)" class="action">
+          <span>Add to Cart <span class="accent">></span></span>
         </div>
       </div>
     </div>
@@ -28,6 +28,16 @@ export default {
   name: "Cake",
   props: {
     cake: Object,
+  },
+  methods: {
+    addToCart(id) {
+      console.log("Add ID to Cart: ", id);
+      this.$emit("addToCart", id);
+    },
+    openInfo(id) {
+      console.log("Open Info", id);
+      this.$emit("openInfo", id);
+    },
   },
 };
 </script>

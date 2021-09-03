@@ -28,7 +28,7 @@ export default {
   top: 0;
   margin: 0 auto;
   width: 100%;
-  height: 60px;
+  height: 6 0px;
   background-color: #111111;
   color: #8a8a8a;
   padding-left: 100px;

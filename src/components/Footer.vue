@@ -92,6 +92,11 @@ export default {
 p {
   color: #8a8a8a;
 }
+p:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
 h3 {
   color: #ededed;
 }

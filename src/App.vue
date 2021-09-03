@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <Browser :cakes="cakes" />
+  <Browser @openInfo="openInfo" @addToCart="addToCart" :cakes="cakes" />
   <Footer />
 </template>
 
@@ -23,6 +23,12 @@ export default {
 
       return data;
     },
+    addToCart(id) {
+      console.log("Added ID:", id, "to Cart");
+    },
+    openInfo(id) {
+      console.log("Opening Info", id);
+    },
   },
   data() {
     return {
@@ -41,13 +47,15 @@ export default {
 </script>
 
 <style>
+body {
+  background: #222222;
+}
 #app {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #222222;
   margin: 0;
-  margin-top: 53px;
+  margin-top: 70px;
   padding: 0;
 }
 body {

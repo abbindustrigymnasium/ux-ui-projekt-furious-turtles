@@ -1,7 +1,11 @@
 <template>
   <div class="gridContainer">
     <div class="cakeItem" :key="cake.id" v-for="cake in cakes">
-      <Cake :cake="cake" />
+      <Cake
+        @openInfo="$emit('openInfo', cake.id)"
+        @addToCart="$emit('addToCart', cake.id)"
+        :cake="cake"
+      />
     </div>
   </div>
 </template>
@@ -23,6 +27,8 @@ export default {
 <style>
 .gridContainer {
   display: grid;
+  grid-row-gap: 7px;
+  grid-column-gap: 14px;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }
 </style>
