@@ -5,7 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    Username : "hej"
+    Username : "",
+    money: 0,
+    loginButtonFeedback: true,
+    cartButtonFeedback: false,
+    cart: [],
+    totalPrice: 0,
+    PendingOrders: false,
+    CartNumber: 0,
+    IsloggedIn: false,
   },
   mutations: {
   },

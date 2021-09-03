@@ -1,5 +1,7 @@
 <template>
+   
 <div id="loginn">
+   <v-alert type="success" color="green" v-show="alertFeedback" id="loginFeed">{{ loginFeed }}</v-alert>
       <v-content>
          <v-container fluid fill-height>
             <v-layout align-center justify-center>
@@ -48,7 +50,11 @@ export default {
     data() {
        return {
           Username : "",
-          Password : ""
+          Password : "",
+          loginFeed: "",
+          alertFeedback: false,
+          cartButtonFeedback: false,
+
        }
     },
 
@@ -60,8 +66,19 @@ export default {
       Login() {
          if(this.Username === "Samuel" && this.Password === "1234") {
             this.$store.state.Username = this.Username
+            this.loginFeed = "Logged in as admin"
+            this.alertFeedback = true
+            this.$store.state.loginButtonFeedback = false
+            this.$store.state.PendingOrders = true
+            this.$store.state.IsLoggedIn = true
          } else {
             this.$store.state.Username = this.Username
+            this.loginFeed = "You are logged in"
+            this.alertFeedback = true
+            this.$store.state.money =  1000
+            this.$store.state.loginButtonFeedback = false
+            this.$store.state.cartButtonFeedback = true
+            this.$store.state.IsLoggedIn = true
          }
       }
    }
@@ -71,6 +88,13 @@ export default {
 
 
 <style>
+#loginFeed {
+   margin-top: -150px;
+   margin-left: 150px;
+   width: 270px;
+   position: absolute;
+   background-color: green;
+}
 #loginn {
    width: 100vw;
    margin-left: 550px;
