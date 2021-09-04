@@ -1,15 +1,10 @@
 <template>
   <div class="navbarContainer">
     <div class="navbar">
-      <img
-        class="navitem"
-        src="../../public/razer-ths-logo.svg"
-        alt="razer Logo"
-        width="50"
-      />
+      <img src="../../public/razer-ths-logo.svg" alt="razer Logo" width="50" />
       <h3 class="navitem">Shop</h3>
       <h3 class="navitem">Featured</h3>
-      <i class="fas fa-search navitem"></i>
+      <i @click="toggleSearch" class="fas fa-search navitem"></i>
       <i class="fas fa-shopping-cart navitem"></i>
       <i class="fas fa-user-circle navitem"></i>
     </div>
@@ -19,34 +14,46 @@
 <script>
 export default {
   name: "Navbar",
+  methods: {
+    toggleSearch() {
+      console.log("toggleSearch");
+      this.$emit("toggleSearch");
+    },
+  },
 };
 </script>
 
 <style scoped>
 .navbarContainer {
   position: fixed;
-  top: 0;
-  margin: 0 auto;
+  top: 0%;
+  left: 0%;
   width: 100%;
-  height: 6 0px;
+  height: 60px;
   background-color: #111111;
   color: #8a8a8a;
-  padding-left: 100px;
-  padding-right: 100px;
   z-index: 100000;
 }
 .navbar {
   display: flex;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 80%;
+  z-index: 10000;
   justify-content: space-between;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 0;
-  margin-bottom: auto;
-  border: black 2px dotted;
+  margin-bottom: 5px;
 }
 .navitem {
   margin-top: auto;
   margin-bottom: auto;
+  transition: 0.3s;
+}
+.navitem:hover {
+  color: white;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 </style>

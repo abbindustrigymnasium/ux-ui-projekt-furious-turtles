@@ -1,6 +1,7 @@
 <template>
-  <Navbar />
-  <Browser @openInfo="openInfo" @addToCart="addToCart" :cakes="cakes" />
+  <Navbar @toggleSearch="toggleSearch" />
+  <Search :visible="searchVisible" @updateSearchTerm="updateSearchTerm" />
+  <Browser @openInfo="openInfo" @addToCart="addToCart" :cakes="filteredCake" />
   <CakeInfo @closeInfo="this.currentCakeInfo = {}" :cake="currentCakeInfo" />
   <Footer />
 </template>
@@ -10,6 +11,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Browser from "./components/Browser";
 import CakeInfo from "./components/CakeInfo";
+import Search from "./components/Search";
 
 export default {
   name: "App",
@@ -18,6 +20,7 @@ export default {
     Navbar,
     Browser,
     CakeInfo,
+    Search,
   },
   methods: {
     async fetchCakes() {
@@ -34,18 +37,34 @@ export default {
       this.currentCakeInfo = this.cakes[id - 1];
       console.log(this.currentCakeInfo);
     },
+    updateSearchTerm(string) {
+      console.log(string);
+      console.log(this.cakes);
+      console.log(this.filteredCake);
+      console.log("e");
+      this.filteredCake = this.cakes.filter((cake) =>
+        cake.title.toLowerCase().includes(string.toLowerCase())
+      );
+    },
+    toggleSearch() {
+      this.searchVisible = !this.searchVisible;
+      console.log("seachVisible", this.searchVisible);
+    },
   },
   data() {
     return {
       cakes: [],
+      filteredCake: {},
       staff: [],
       customers: [],
       orders: [],
       currentCakeInfo: {},
+      searchVisible: false,
     };
   },
   async created() {
     this.cakes = await this.fetchCakes();
+    this.filteredCake = this.cakes;
     console.log(this.cakes);
     console.log("hey");
   },

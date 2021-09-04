@@ -52,12 +52,12 @@ export default {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.404);
   transition: 0.4s;
   z-index: 1;
-  border-radius: 0.7rem;
+  border-radius: 0.4rem;
   border: #111111 0.2rem solid;
 }
 .cakeContainer:hover {
   transform: scale(1.04);
-  z-index: 10;
+  z-index: 5;
 }
 .cakeInfo {
   padding-top: 20px;
@@ -78,6 +78,7 @@ export default {
   text-shadow: 0px 0px 3px #111111;
 }
 .action {
+  background-color: rgba(0, 0, 0, 0.158);
   font-size: 120%;
   border: white 2px solid;
   border-radius: 5px;
@@ -91,6 +92,5 @@ export default {
   transform: scale(1.05);
   cursor: pointer;
   color: #44d62d;
-  text-shadow: black 0px 0px 2px;
 }
 </style>

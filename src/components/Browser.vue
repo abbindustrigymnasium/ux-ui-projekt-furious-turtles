@@ -26,7 +26,8 @@ export default {
 
 <style>
 .gridContainer {
-  margin: 0.7rem;
+  overflow: hidden;
+  padding: 0.7rem;
   display: grid;
   grid-row-gap: 7px;
   grid-column-gap: 14px;

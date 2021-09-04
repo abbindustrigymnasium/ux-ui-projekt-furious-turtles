@@ -54,7 +54,6 @@ export default {
   transition: 0.2s;
 }
 .info {
-  border: red 2px dotted;
   width: auto;
   margin-left: auto;
   margin-right: auto;
