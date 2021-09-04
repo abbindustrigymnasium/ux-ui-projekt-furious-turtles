@@ -91,6 +91,7 @@ export default {
 }
 p {
   color: #8a8a8a;
+  transition: 0.1s;
 }
 p:hover {
   color: white;

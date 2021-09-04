@@ -1,6 +1,7 @@
 <template>
   <Navbar />
   <Browser @openInfo="openInfo" @addToCart="addToCart" :cakes="cakes" />
+  <CakeInfo @closeInfo="this.currentCakeInfo = {}" :cake="currentCakeInfo" />
   <Footer />
 </template>
 
@@ -8,6 +9,7 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Browser from "./components/Browser";
+import CakeInfo from "./components/CakeInfo";
 
 export default {
   name: "App",
@@ -15,6 +17,7 @@ export default {
     Footer,
     Navbar,
     Browser,
+    CakeInfo,
   },
   methods: {
     async fetchCakes() {
@@ -28,6 +31,8 @@ export default {
     },
     openInfo(id) {
       console.log("Opening Info", id);
+      this.currentCakeInfo = this.cakes[id - 1];
+      console.log(this.currentCakeInfo);
     },
   },
   data() {
@@ -36,6 +41,7 @@ export default {
       staff: [],
       customers: [],
       orders: [],
+      currentCakeInfo: {},
     };
   },
   async created() {

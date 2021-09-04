@@ -50,7 +50,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.404);
-  transition: 0.5s;
+  transition: 0.4s;
   z-index: 1;
   border-radius: 0.7rem;
   border: #111111 0.2rem solid;
@@ -63,7 +63,7 @@ export default {
   padding-top: 20px;
   text-align: center;
   color: white;
-  text-shadow: 0px 0px 20px #111111;
+  text-shadow: 0px 0px 5px #111111;
 }
 .actions {
   width: 50%;
@@ -75,7 +75,7 @@ export default {
 .accent {
   display: inline;
   color: #44d62d;
-  text-shadow: 2px 2px 5px #111111;
+  text-shadow: 0px 0px 3px #111111;
 }
 .action {
   font-size: 120%;
@@ -90,5 +90,7 @@ export default {
 .action:hover {
   transform: scale(1.05);
   cursor: pointer;
+  color: #44d62d;
+  text-shadow: black 0px 0px 2px;
 }
 </style>
