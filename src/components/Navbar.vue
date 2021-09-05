@@ -5,7 +5,10 @@
       <h3 @click="$emit('shopPage')" class="navitem">Shop</h3>
       <h3 @click="$emit('featuredPage')" class="navitem">Featured</h3>
       <i @click="toggleSearch" class="fas fa-search navitem"></i>
-      <i class="fas fa-shopping-cart navitem"></i>
+      <i
+        @click="$emit('checkoutPage')"
+        class="fas fa-shopping-cart navitem"
+      ></i>
       <i @click="$emit('accountPage')" class="fas fa-user-circle navitem"></i>
     </div>
   </div>

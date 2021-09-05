@@ -13,7 +13,7 @@
         <h1>{{ cake.title }}</h1>
         <h3>{{ cake.previewDescription }}</h3>
         <h2>€{{ cake.price }}</h2>
-        <div @click="addToCart(cake.id)" class="action">
+        <div @click="$emit('addToCart', cake.id)" class="action">
           <span>Add to Cart <span class="accent">></span></span>
         </div>
       </div>
@@ -76,6 +76,9 @@ export default {
   transform: scale(1.1);
   color: rgb(255, 158, 158);
 }
+.close:active {
+  transform: scale(0.9);
+}
 .image {
   width: auto;
 }
@@ -107,11 +110,16 @@ export default {
   padding-left: 4px;
   padding-right: 4px;
   height: max-content;
-  transition: 0.2s;
+  transition: 0.1s;
+  user-select: none;
 }
 .action:hover {
   transform: scale(1.05);
   cursor: pointer;
   color: #44d62d;
+}
+.action:active {
+  transform: scale(0.95);
+  background-color: #44d62d;
 }
 </style>

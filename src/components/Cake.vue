@@ -87,11 +87,16 @@ export default {
   padding-left: 4px;
   padding-right: 4px;
   height: max-content;
-  transition: 0.2s;
+  transition: 0.1s;
+  user-select: none;
 }
 .action:hover {
   transform: scale(1.05);
   cursor: pointer;
   color: #44d62d;
+}
+.action:active {
+  transform: scale(0.95);
+  background-color: #44d62d;
 }
 </style>

@@ -3,6 +3,7 @@
     @accountPage="state = 'account'"
     @shopPage="state = 'shop'"
     @featuredPage="state = 'featured'"
+    @checkoutPage="state = 'checkout'"
     @toggleSearch="toggleSearch"
   />
   <div v-if="state === 'account'">
@@ -15,7 +16,14 @@
       @addToCart="addToCart"
       :cakes="filteredCake"
     />
-    <CakeInfo @closeInfo="this.currentCakeInfo = {}" :cake="currentCakeInfo" />
+    <CakeInfo
+      @addToCart="addToCart"
+      @closeInfo="this.currentCakeInfo = {}"
+      :cake="currentCakeInfo"
+    />
+  </div>
+  <div v-if="state === 'checkout'">
+    <Checkout />
   </div>
   <Footer />
 </template>
@@ -27,6 +35,7 @@ import Browser from "./components/Browser";
 import CakeInfo from "./components/CakeInfo";
 import Search from "./components/Search";
 import Account from "./components/Account";
+import Checkout from "./components/Checkout";
 
 export default {
   name: "App",
@@ -37,16 +46,48 @@ export default {
     CakeInfo,
     Search,
     Account,
+    Checkout,
   },
   methods: {
-    async fetch(string) {
+    async fetchJson(string) {
       const res = await fetch("http://localhost:5000/" + string);
       const data = await res.json();
 
       return data;
     },
-    addToCart(id) {
-      console.log("Added ID:", id, "to Cart");
+    async addToCart(id) {
+      let userID = sessionStorage.getItem("userID");
+
+      if (!userID) {
+        alert("Not logged into an Account");
+        return;
+      }
+      const getRes = await fetch("http://localhost:5000/customers/" + userID);
+      const getData = await getRes.json();
+      console.log(getData);
+
+      let newCart = [];
+
+      if (getData.cart) {
+        newCart = getData.cart;
+        if (newCart[id]) {
+          newCart[id] += 1;
+        } else {
+          newCart[id] = 1;
+        }
+      } else {
+        newCart = {};
+        newCart[id] = 1;
+      }
+      const res = await fetch("http://localhost:5000/customers/2", {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ cart: newCart }),
+      });
+      const data = await res.json();
+      console.log(data);
     },
     openInfo(id) {
       console.log("Opening Info", id);
@@ -84,7 +125,7 @@ export default {
     };
   },
   async created() {
-    this.cakes = await this.fetch("Cakes");
+    this.cakes = await this.fetchJson("Cakes");
     this.filteredCake = this.cakes;
     console.log(this.cakes);
     console.log("hey");
