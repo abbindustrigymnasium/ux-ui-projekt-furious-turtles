@@ -1,8 +1,22 @@
 <template>
-  <Navbar @toggleSearch="toggleSearch" />
-  <Search :visible="searchVisible" @updateSearchTerm="updateSearchTerm" />
-  <Browser @openInfo="openInfo" @addToCart="addToCart" :cakes="filteredCake" />
-  <CakeInfo @closeInfo="this.currentCakeInfo = {}" :cake="currentCakeInfo" />
+  <Navbar
+    @accountPage="state = 'account'"
+    @shopPage="state = 'shop'"
+    @featuredPage="state = 'featured'"
+    @toggleSearch="toggleSearch"
+  />
+  <div v-if="state === 'account'">
+    <Account :account="account" />
+  </div>
+  <div v-if="state === 'shop'">
+    <Search :visible="searchVisible" @updateSearchTerm="updateSearchTerm" />
+    <Browser
+      @openInfo="openInfo"
+      @addToCart="addToCart"
+      :cakes="filteredCake"
+    />
+    <CakeInfo @closeInfo="this.currentCakeInfo = {}" :cake="currentCakeInfo" />
+  </div>
   <Footer />
 </template>
 
@@ -12,6 +26,7 @@ import Navbar from "./components/Navbar";
 import Browser from "./components/Browser";
 import CakeInfo from "./components/CakeInfo";
 import Search from "./components/Search";
+import Account from "./components/Account";
 
 export default {
   name: "App",
@@ -21,10 +36,11 @@ export default {
     Browser,
     CakeInfo,
     Search,
+    Account,
   },
   methods: {
-    async fetchCakes() {
-      const res = await fetch("http://localhost:5000/cakes");
+    async fetch(string) {
+      const res = await fetch("http://localhost:5000/" + string);
       const data = await res.json();
 
       return data;
@@ -50,23 +66,31 @@ export default {
       this.searchVisible = !this.searchVisible;
       console.log("seachVisible", this.searchVisible);
     },
+    getCookie(c_name) {
+      return sessionStorage.getItem(c_name);
+    },
+    setCookie(c_name, value) {
+      return sessionStorage.setItem(c_name, value);
+    },
   },
   data() {
     return {
       cakes: [],
       filteredCake: {},
-      staff: [],
-      customers: [],
-      orders: [],
       currentCakeInfo: {},
       searchVisible: false,
+      state: "shop",
+      account: -1,
     };
   },
   async created() {
-    this.cakes = await this.fetchCakes();
+    this.cakes = await this.fetch("Cakes");
     this.filteredCake = this.cakes;
     console.log(this.cakes);
     console.log("hey");
+    this.account = this.getCookie("userID");
+    console.log(this.account);
+    console.log(this.account === null);
   },
 };
 </script>

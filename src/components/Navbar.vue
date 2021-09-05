@@ -2,11 +2,11 @@
   <div class="navbarContainer">
     <div class="navbar">
       <img src="../../public/razer-ths-logo.svg" alt="razer Logo" width="50" />
-      <h3 class="navitem">Shop</h3>
-      <h3 class="navitem">Featured</h3>
+      <h3 @click="$emit('shopPage')" class="navitem">Shop</h3>
+      <h3 @click="$emit('featuredPage')" class="navitem">Featured</h3>
       <i @click="toggleSearch" class="fas fa-search navitem"></i>
       <i class="fas fa-shopping-cart navitem"></i>
-      <i class="fas fa-user-circle navitem"></i>
+      <i @click="$emit('accountPage')" class="fas fa-user-circle navitem"></i>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   height: 60px;
   background-color: #111111;
   color: #8a8a8a;
-  z-index: 100000;
+  z-index: 1000;
 }
 .navbar {
   display: flex;

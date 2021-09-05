@@ -11,6 +11,7 @@
     <div class="cakeInfo">
       <h1>{{ cake.title }}</h1>
       <h3>{{ cake.previewDescription }}</h3>
+      <h2>€{{ cake.price }}</h2>
       <div class="actions">
         <div @click="openInfo(cake.id)" class="action">
           <span>Learn More <span class="accent">></span></span>

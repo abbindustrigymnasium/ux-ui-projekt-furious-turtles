@@ -12,6 +12,7 @@
       <div class="info">
         <h1>{{ cake.title }}</h1>
         <h3>{{ cake.previewDescription }}</h3>
+        <h2>€{{ cake.price }}</h2>
         <div @click="addToCart(cake.id)" class="action">
           <span>Add to Cart <span class="accent">></span></span>
         </div>
