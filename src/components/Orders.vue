@@ -9,7 +9,7 @@
               <th class="type">Type</th>
               <th class="number">Quantity</th>
               <th class="currency">Price</th>
-              <th class="currency">Total Price</th>
+              <th class="currency">Total</th>
             </tr>
             <tr class="cakeGridItem" :key="cake.id" v-for="cake in order.cakes">
               <td class="type">{{ getCake(cake.cakeId).title }}</td>
@@ -56,7 +56,9 @@ export default {
     },
     getCake(id) {
       console.log(id);
-      let cake = this.cakes.filter((filterCake) => filterCake.id === id);
+      let cake = this.cakes.filter(
+        (filterCake) => filterCake.id === parseInt(id)
+      );
       return cake[0];
     },
   },

@@ -200,11 +200,7 @@
       "password": "DmqRhyqtlgqJQ7l",
       "timestamp": "2021-05-05T04:02:13.518Z",
       "avatar": "https://cdn.fakercloud.com/avatars/lisovsky_128.jpg",
-      "cart": {
-        "1": 90,
-        "2": 7,
-        "4": 7
-      }
+      "cart": {}
     },
     {
       "id": 3,
@@ -1331,6 +1327,38 @@
       ],
       "totalPrice": 37,
       "timestamp": "2021-05-04T22:07:21.890Z"
+    },
+    {
+      "customerId": "2",
+      "totalPrice": 40,
+      "cakes": [
+        {
+          "cakeId": "1",
+          "quantity": 5
+        },
+        {
+          "cakeId": "2",
+          "quantity": 5
+        }
+      ],
+      "timestamp": "2021-09-07T20:25:13.039Z",
+      "id": 51
+    },
+    {
+      "customerId": "2",
+      "totalPrice": 162,
+      "cakes": [
+        {
+          "cakeId": "1",
+          "quantity": 29
+        },
+        {
+          "cakeId": "2",
+          "quantity": 15
+        }
+      ],
+      "timestamp": "2021-09-07T20:27:04.256Z",
+      "id": 52
     }
   ]
 }

@@ -2,7 +2,7 @@
   <Navbar
     @accountPage="state = 'account'"
     @shopPage="state = 'shop'"
-    @featuredPage="state = 'featured'"
+    @staffPage="state = 'staff'"
     @checkoutPage="state = 'checkout'"
     @toggleSearch="toggleSearch"
   />
@@ -25,6 +25,7 @@
   <div v-if="state === 'checkout'">
     <Checkout />
   </div>
+  <div v-if="state === staff"></div>
   <Footer />
 </template>
 
@@ -79,7 +80,7 @@ export default {
         newCart = {};
         newCart[id] = 1;
       }
-      const res = await fetch("http://localhost:5000/customers/2", {
+      const res = await fetch("http://localhost:5000/customers/" + userID, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",

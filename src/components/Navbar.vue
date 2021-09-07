@@ -3,7 +3,7 @@
     <div class="navbar">
       <img src="../../public/razer-ths-logo.svg" alt="razer Logo" width="50" />
       <h3 @click="$emit('shopPage')" class="navitem">Shop</h3>
-      <h3 @click="$emit('featuredPage')" class="navitem">Featured</h3>
+      <h3 @click="$emit('staffPage')" class="navitem">Staff</h3>
       <i @click="toggleSearch" class="fas fa-search navitem"></i>
       <i
         @click="$emit('checkoutPage')"
