@@ -1,4 +1,4 @@
-# bakery
+# ux-ui-projekt-furious-turtles
 
 ## Project setup
 ```
